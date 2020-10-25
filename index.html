@@ -41,6 +41,7 @@
                 </div>
               </div>
             </section>
+            <hr/>
             <section class="instructions">
               <p class="title">
                 Instructions
@@ -51,6 +52,20 @@
                 </div>
                 <div class="column has-text-left test">
                   <span v-html="instruction"></span>
+                </div>
+              </div>
+            </section>
+            <hr/>
+            <section class="notes">
+              <p class="title">
+                Notes
+              </p>
+              <div class="instruction-step columns is-mobile" v-for="(note, index) of notes">
+                <div class="column is-narrow has-text-centered">
+                  <div class="step"> {{ index + 1 }} </div>
+                </div>
+                <div class="column has-text-left test">
+                  <span v-html="note"></span>
                 </div>
               </div>
             </section>
@@ -69,23 +84,32 @@
                 </div>
               </div>
               <div class="durations is-vcentered">
-              <div class="columns is-mobile is-gapless is-vcentered" v-for="time of durations">
-                <div class="column has-text-centered">
-                  <span class="icon">
-                    <i class="far fa-clock fa-2x"></i>
-                  </span>
+                <div class="columns is-mobile is-gapless is-vcentered" v-for="time of durations">
+                  <div class="column has-text-centered">
+                    <span class="icon">
+                      <i class="far fa-clock fa-2x"></i>
+                    </span>
+                  </div>
+                  <div class="column has-text-left">
+                    <p class="is-uppercase has-text-weight-semibold is-size-7 ">{{time.name}}</p>
+                    <p class="is-size-6">{{time.duration}}</p>
+                  </div>
                 </div>
-                <div class="column has-text-left">
-                  <p class="is-uppercase has-text-weight-semibold is-size-7 ">{{time.name}}</p>
-                  <p class="is-size-6">{{time.duration}}</p>
-                </div>
-              </div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+  </section>
+  <section>
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Classic Cheesecake Recipe</strong> from <a href="https://sallysbakingaddiction.com/classic-cheesecake/">Sally’s Baking Addiction</a>. 
+    </p>
+  </div>
+</footer>
   </section>
   <script src="https://unpkg.com/vue"></script>
   <!-- Full bundle -->
