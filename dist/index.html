@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - recipe-challenge</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+</head>
+
+<body>
+  <section class="columns is centered">
+    <div id="app" class="column">
+      <!-- Buefy components goes here -->
+      <section class="title-card">
+        <div class="title">{{ name }} </div>
+        <div class="description-icon"> </div>
+        <div class="description subtitle is-italic" @click="clickMe">{{ description }}</div>
+        <b-image class="recipe-img" src="https://github.com/weirdyang/dev-challenge-recipe/blob/main/photo1.png?raw=true" alt="A random image" ratio="6by4"></b-image>
+      </section>
+
+      <section class="recipe-card">
+        <div class="columns is-centered reverse-columns">
+          <div class="column">
+            <section class="ingredients">
+              <p class="title">
+                Ingredients
+              </p>
+              <div class="component-div" v-for="component of components">
+                <p class="subtitle">{{ component.name}}</p>
+                <div v-for="ingredient of component.ingredients">
+                  <div class="field mb-1">
+                    <b-checkbox type="is-warning" inverted outlined> <span v-html="ingredient"></span></b-checkbox>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="instructions">
+              <p class="title">
+                Instructions
+              </p>
+              <div class="instruction-step columns is-mobile" v-for="(instruction, index) of instructions">
+                <div class="column is-narrow has-text-centered">
+                  <div class="step"> {{ index + 1 }} </div>
+                </div>
+                <div class="column has-text-left test">
+                  <span v-html="instruction"></span>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="column is-2 recipe-aside">
+            <div class="container box">
+              <div class="columns is-mobile is-narrow is-gapless is-vcentered has-text-centered yield">
+                <div class="column ">
+                  <span class="icon is-large">
+                    <i class="fas fa-utensils fa-2x"></i>
+                  </span>
+                </div>
+                <div class="column has-text-left">
+                  <p class="is-uppercase has-text-weight-semibold is-size-7 ">yield</p>
+                  <p class="is-size 5">{{yield}}</p>
+                </div>
+              </div>
+              <div class="durations is-vcentered">
+              <div class="columns is-mobile is-gapless is-vcentered" v-for="time of durations">
+                <div class="column has-text-centered">
+                  <span class="icon">
+                    <i class="far fa-clock fa-2x"></i>
+                  </span>
+                </div>
+                <div class="column has-text-left">
+                  <p class="is-uppercase has-text-weight-semibold is-size-7 ">{{time.name}}</p>
+                  <p class="is-size-6">{{time.duration}}</p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <script src="https://unpkg.com/vue"></script>
+  <!-- Full bundle -->
+  <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+</body>
+<!-- partial -->
+  <script src='https://use.fontawesome.com/releases/v5.14.0/js/all.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+.description::before {
+  content: url(https://raw.githubusercontent.com/weirdyang/dev-challenge-recipe/main/6dots.svg);
+  margin-right: 1rem;
+}
+.description {
+}
+.title-card {
+  margin-bottom: 2em;
+}
+#app {
+  margin: 2em;
+  padding: 2em;
+}
+
+.component-div:nth-child(2n + 1) {
+  margin-top: 1rem;
+}
+.yield {
+  color: #f2994a;
+}
+.recipe-img > img {
+  border-radius: 25px;
+}
+.step {
+  /* Orange */
+  width: 2rem;
+  height: 2rem;
+  background: #f2994a;
+  padding-top: 0.25rem;
+  border-radius: 6px;
+  color: white;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  /* <== You can change this break point as per your  needs */
+  .reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  .durations {
+  }
+}
