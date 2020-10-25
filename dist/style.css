@@ -31,12 +31,12 @@
   color: white;
   align-items: center;
 }
+
+.
 @media (max-width: 767px) {
   /* <== You can change this break point as per your  needs */
   .reverse-columns {
     flex-direction: column-reverse;
     display: flex;
-  }
-  .durations {
   }
 }
